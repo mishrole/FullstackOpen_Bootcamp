@@ -1,24 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const Hello = () => {
+const Hello = (props) => {
   return (
     <div>
-      <p>Hello Component</p>
+      {/* If the value of the prop is achieved using Javascript,
+       it must be wrapped with curly braces */}
+      <p>Hello {props.name}, you are {props.age} years old</p>
     </div>
   )
 }
 
 const App = () => {
   const now = new Date();
-  const a = 10;
-  const b = 20;
+  const name = 'Mitch';
+  const age = 23;
 
   return(
   <div>
     <p>Hello world, it is {now.toString()}</p>
-    <p>{a} plus {b} is {a+b}</p>
-    <Hello />
+    <Hello name="Klaus" age={26 + 10} />
+    <Hello name={name} age={age} />
   </div>)
 }
 
