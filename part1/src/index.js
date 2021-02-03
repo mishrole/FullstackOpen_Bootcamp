@@ -11,6 +11,15 @@ const Hello = (props) => {
   )
 }
 
+// React Component names must be capitalized
+const Footer = () => {
+  return (
+    <div>
+      Greeting app created by <a href="https://github.com/mishrole">mishrole</a>
+    </div>
+  )
+}
+
 const App = () => {
   const now = new Date();
   const name = 'Mitch';
@@ -21,7 +30,13 @@ const App = () => {
     <p>Hello world, it is {now.toString()}</p>
     <Hello name="Klaus" age={26 + 10} />
     <Hello name={name} age={age} />
-  </div>)
+    {/* If you use <footer /> the page is not going to display the
+    content defined within the Footer component, and instead React
+    only creates an empty footer element */}
+    <Footer />
+
+  </div>
+  )
 }
 
 ReactDOM.render(
